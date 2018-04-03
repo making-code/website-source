@@ -1,0 +1,10 @@
+baseURL = "http://makingco.de/"
+languageCode = "en-us"
+title = "Making Code"
+theme = "hugo-theme-learn"
+
+[params]
+  themeVariant = "mine"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
