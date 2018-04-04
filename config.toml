@@ -8,3 +8,27 @@ theme = "hugo-theme-learn"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-youtube'></i> YouTube"
+identifier = "yt"
+url = "https://www.youtube.com/channel/UCi5LmV6poc1Krh6SNqt2PAQ"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-twitch'></i> Twitch"
+identifier = "tv"
+url = "https://twitch.tv/g33konaut"
+weight = 21
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-twitter'></i> Twitter"
+identifier = "tw"
+url = "https://twitter.com/making_code"
+weight = 22
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-github'></i> Github"
+identifier = "gh"
+url = "https://github.com/making-code"
+weight = 23
