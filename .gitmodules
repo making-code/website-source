@@ -2,3 +2,7 @@
 	path = public
 	url = git@github.com:making-code/making-code.github.io.git
 	branch = master
+[submodule "themes/hugo-theme-learn"]
+	path = themes/hugo-theme-learn
+	url = https://github.com/matcornic/hugo-theme-learn.git
+	branch = master
