@@ -4,15 +4,17 @@ date =  2018-04-03T12:03:53+02:00
 weight = 2
 +++
 
-In the previous section, we have seen that we can use **gates** in a digital circuit to represent and answer more complex problems.
+In the previous section, we can combined **gates** to solve larger problems with yes/no questions.
 
 ## Logic in software
 
-When programming software, we will often have to deal with decisions on a logical level or even on a bit-level. To allow us to do that, all programming languages offer some kind of boolean logic operators.
+When programming, we will often have to deal with decisions on a logical level. 
+To allow us to do that, all programming languages offer some kind of boolean logic operators.
 
 {{%expand "Recap: Boolean values" %}}
+We have established that in digital logic, we work with two values. They represent the concept of "true" and "false".
 
-We have established that in digital logic, we work with two values. They represent the concept of "true" and "false" and their meanings can be slightly different depending on how you look at them, for instance:
+Their meanings can be different depending on how you look at them, for instance:
 
 | true | false |
 | ---- | ----- |
@@ -21,8 +23,7 @@ We have established that in digital logic, we work with two values. They represe
 | on | off |
 | positive voltage | negative voltage |
 
-These values are also referred to as **boolean value** or **boolean** for short, i.e. something that can have one of two values and nothing else.
-
+These values are also referred to as a **boolean value** or **boolean** for short. A boolean is something that can have one of two values and nothing else.
 {{% /expand%}}
 
 For this chapter, we will use `true` and `false` to refer to our boolean values.
@@ -40,7 +41,7 @@ Let's dive into each of them!
 
 ## NOT
 
-This operator is most useful in combination with one of the other two operators, but can also be used alone.
+This operator is most useful in combination with one of the other two operators or alone.
 It inverts, i.e. "turns around" a boolean value:
 
 | x | NOT x |
@@ -62,7 +63,7 @@ var wasNaughty = !wasNice; // wasNaughty will be true
 
 ## AND
 
-The logical _and_ operator can be used when two booleans need to be true for the result to be true.
+The logical _and_ operator outputs true when the two input booleans **are both** true.
 
 | x | y | x AND y |
 | --- | --- | --- |
@@ -82,9 +83,11 @@ if (user.isLoggedIn && user.isAdmin) {
 ```
 {{% /expand %}}
 
+In most programming languages this operator is either expressed as `&&` (e.g. `x && y`) or the word `and`.
+
 ## OR
 
-The logical _or_ operator can be used when **at least one** of two booleans need to be true for the result to be true.
+The logical _or_ operator outputs true when **at least one** of two input booleans is true.
 
 | x | y | x OR y |
 | --- | --- | --- |
@@ -94,6 +97,8 @@ The logical _or_ operator can be used when **at least one** of two booleans need
 | true | true | true |
 
 ![A logical circuit for the OR operator](/img/content/foundations/boolean-or.gif)
+
+In most programming languages this operator is either expressed as `||` (e.g. `x || y`) or the word `or`.
 
 {{%expand Example %}}
 ```js
@@ -108,17 +113,17 @@ if (wantsKetchup || wantsMayo) {
 
 ## XOR
 
-The previous logical `OR` operator returns `true` when _at least one_ of the inputs is `true` - but often we want to make sure that _exactly one_ of the inputs is true.
+The `OR` operator returns `true` when _at least one_ of its inputs is true. What if we want to return `true` when _exactly_ one input is true?
 
-This is a common logical operator called _e**X**trutruclusive **OR**_ or `XOR` for short.
-It is usually not consider a _basic_ boolean operator because it can be created using `NOT`, `AND` and `OR`.
+This is a common logical operator called _e**X**clusive **OR**_ or `XOR` for short.
+It is usually not considered a _basic_ boolean operator because it is a combination of `NOT`, `AND` and `OR`.
 
 {{%expand "Creating the XOR from other operators" %}}
 
-The `XOR` operator can be built from `NOT`, `AND` and `OR` operations.
+The `XOR` operator is a combination of  `NOT`, `AND` and `OR` operations.
 We have two booleans `x` and `y` and we only want to have a `true` as the result if _either_ `x` or `y` are `true`, but _not_ if _both_ are `true`.
 
-There are multiple ways of implementing this with logical `NOT`, `AND` and `OR`:
+There are at least two ways of implementing this with logical `NOT`, `AND` and `OR`:
 
 1. `(x && (!y)) || ((!x) && y)`
 2. `(x || y) && (!y || !x)`
