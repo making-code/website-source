@@ -116,7 +116,7 @@ if (wantsKetchup || wantsMayo) {
 The `OR` operator returns `true` when _at least one_ of its inputs is true. What if we want to return `true` when _exactly_ one input is true?
 
 This is a common logical operator called _e**X**clusive **OR**_ or `XOR` for short.
-It is usually not considered a _basic_ boolean operator because it is a combination of `NOT`, `AND` and `OR`.
+It is usually not considered a _basic_ boolean operator. It is a combination of `NOT`, `AND` and `OR`.
 
 {{%expand "Creating the XOR from other operators" %}}
 
